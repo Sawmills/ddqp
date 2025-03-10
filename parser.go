@@ -5,7 +5,6 @@ import "github.com/alecthomas/participle/v2/lexer"
 // This is the primary lexer for all parsers
 // nolint:govet
 var lex = lexer.MustSimple([]lexer.SimpleRule{
-	{"Comment", `(?i)rem[^\n]*`},
 	{"String", `"(\\"|[^"])*"`},
 	{"BoolLikeIdent", `(?i)(not|and|or)[\-\w\d\*\./\?]+`},
 	{"EscapedBoolean", `\\(?i)(AND|OR|NOT)\b`},

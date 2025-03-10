@@ -433,6 +433,18 @@ func TestQueryFilterParser(t *testing.T) {
 
 		// Complex queries with multiple negations at different levels
 		{
+			name:     "source and status and text",
+			query:    `source:java status:info removing`,
+			expected: `source:java status:info removing`,
+			wantErr:  false,
+		},
+		{
+			name:     "source and status and quoted text",
+			query:    `source:java status:info "removing free"`,
+			expected: `source:java status:info "removing free"`,
+			wantErr:  false,
+		},
+		{
 			name:     "multiple negations at different levels",
 			query:    `service:api -env:dev -@status_code:[500 TO 599] NOT(source:internal AND -region:us-east)`,
 			expected: `service:api -env:dev -@status_code:[500 TO 599] NOT(source:internal AND -region:us-east)`,
