@@ -336,6 +336,12 @@ func TestQueryFilterParser(t *testing.T) {
 			expected: `tags:MY_TAG`,
 			wantErr:  false,
 		},
+		{
+			name:     "service with multiple options",
+			query:    `service:(alert-enrichment-pipeline OR enrichment OR norm OR consumer OR bouncer OR event-log OR metadata-api)`,
+			expected: `service:(alert-enrichment-pipeline OR enrichment OR norm OR consumer OR bouncer OR event-log OR metadata-api)`,
+			wantErr:  false,
+		},
 
 		// Arrays and JSON objects
 		{
