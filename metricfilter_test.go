@@ -31,12 +31,12 @@ func Test_MetricMonitorFilter(t *testing.T) {
 			wantErr:  false,
 			printAST: false,
 		},
-		//{
-		//	name:     "test int and string",
-		//	query:    "code:2xx",
-		//	wantErr:  false,
-		//	printAST: true,
-		//},
+		{
+			name:     "test int and string",
+			query:    "code:2xx",
+			wantErr:  false,
+			printAST: true,
+		},
 		{
 			name:     "test one simple filter",
 			query:    "foo:bar-bar",

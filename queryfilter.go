@@ -407,7 +407,7 @@ func (rv *RangeValue) String() string {
 func NewQueryFilterParser() *QueryFilterParser {
 	qfp := &QueryFilterParser{
 		parser: participle.MustBuild[QueryFilter](
-			participle.Lexer(lex),
+			participle.Lexer(logQueryLex),
 			participle.Unquote("String"),
 		),
 	}
