@@ -415,25 +415,6 @@ func NewQueryFilterParser() *QueryFilterParser {
 	return qfp
 }
 
-func DebugParse(query string) (*QueryFilter, error) {
-	qfp := NewQueryFilterParser()
-	result, err := qfp.Parse(query)
-
-	if err != nil {
-		return nil, err
-	}
-
-	// Debug output
-	fmt.Printf("Query: %s\n", query)
-	fmt.Printf("Left: %+v\n", result.Left)
-	fmt.Printf("Right count: %d\n", len(result.Right))
-	for i, r := range result.Right {
-		fmt.Printf("Right[%d]: %+v\n", i, r)
-	}
-
-	return result, nil
-}
-
 // QueryFilterParser is parser returned when calling NewQueryFilterParser.
 type QueryFilterParser struct {
 	parser *participle.Parser[QueryFilter]
