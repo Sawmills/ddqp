@@ -1,6 +1,6 @@
 module github.com/Sawmills/ddqp
 
-go 1.24
+go 1.26.0
 
 require (
 	github.com/alecthomas/participle/v2 v2.1.1
