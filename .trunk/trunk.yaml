@@ -46,6 +46,9 @@ lint:
     - trufflehog@3.88.14
     - semgrep@1.110.0
   ignore:
+    - linters: [markdownlint]
+      paths:
+        - CLAUDE.md
     - linters: [prettier]
       paths:
         # Ignore markdown files
